@@ -1,0 +1,37 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int arr[]={2,3,4,5,6,7,8,9};
+    int lb=0,ub=sizeof(arr)/sizeof(arr[0]);
+    int mid,pos=-1;
+    int ele;
+    cout<<"Enter the element you want to search";
+    cin>>ele;
+    while(lb<=ub || pos!=-1)
+    {
+        mid=(lb+ub)/2;
+            if(arr[mid]==ele)
+            {
+                pos=mid;
+                break;
+            } 
+            if(ele>arr[mid])
+            {
+                lb=mid+1;
+            }
+            if(ele<arr[mid])
+            {
+                ub=mid-1;
+            }
+    }
+    if(pos==-1)
+    {
+        cout<<"Element not found";
+    }
+    else
+    {
+        cout<<"Element found";
+    }
+    return 0;
+}
